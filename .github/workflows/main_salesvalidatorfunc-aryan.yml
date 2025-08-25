@@ -35,7 +35,7 @@ jobs:
           source venv/bin/activate
 
       - name: Install dependencies
-        run: pip install -r azurefuncv1/requirements.txt
+        run: pip install -r requirements.txt
 
       # Optional: Add step to run tests here
 
@@ -69,9 +69,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3BDEBE3797C6431B83C71167BD8D344E }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AEE6D09DAB5E40B1ACB9BAE9E50F6292 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C860092209AD40C6A91A33002C144699 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_541E9FBAB2C14C5EB2A823C653BE0C9B }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_28F9D6F5C9D94C5D8974F5FBE3C77B87 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_689F20D7D2724CABB684A61148A8036B }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
@@ -80,5 +80,4 @@ jobs:
           app-name: 'SalesValidatorFunc-aryan'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-
           
